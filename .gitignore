@@ -90,3 +90,7 @@ ENV/
 
 # Local settings
 website/
+rebecca
+
+# PyCharm
+.idea/
