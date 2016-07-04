@@ -1,2 +1,2 @@
 # rebeccahare.co.uk
-The personal website of Rebecca Hare, actor.
+The personal [website](http://rebeccahare.co.uk) of Rebecca Hare, actor.
