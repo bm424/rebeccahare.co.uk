@@ -1,0 +1,47 @@
+{% extends "photologue/gallery_archive.html" %}
+
+{% load staticfiles %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'css/gallery/gallery_archive.css' %}"/>
+{% endblock %}
+
+{% block submenu %}
+    <ul>
+        <a href="{% url 'photologue:pl-photologue-root' %}">
+            <li id="all">All Galleries</li>
+        </a>
+        <a href="{% url 'photologue:pl-gallery-archive-year' day|date:"Y" %}">
+            <li id="year">{{ day|date:"Y" }}</li>
+        </a>
+        <a href="{% url 'photologue:gallery-archive-month' day.year day|date:"m"|lower %}">
+            <li id="month">{{ day|date:"F" }}</li>
+        </a>
+        <a href="{% url 'photologue:gallery-archive-day' day.year day|date:"m"|lower day.day %}">
+            <li id="day">{{ day|date:"d" }}</li>
+        </a>
+    </ul>
+{% endblock %}
+
+{% block content %}
+
+    <h1>Galleries {{ day|date:"F Y" }}</h1>
+    <hr>
+
+    <div class="gallery-wrapper">
+
+        <div class="row">
+            <div class="gallery-main">
+                {% if object_list %}
+                    {% for gallery in object_list %}
+                        {% include 'photologue/gallery_display_snippet.html' %}
+                    {% endfor %}
+                {% else %}
+                    <p>No galleries were found.</p>
+                {% endif %}
+
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'css/about.css' %}" />
+{% endblock %}
+
+{% block title %}
+About
+{% endblock %}
+
+{% block content %}
+    {{ about.about|safe }}
+{% endblock %}
+
+{% block photo %}
+    <img src="{% static 'images/main_headshot_4_web.jpg' %}" alt="Yeah, she's got a pretty smile too." class="bg"/>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'css/gallery/gallery_archive.css' %}"/>
+{% endblock %}
+
+{% block content %}
+    <h1>Gallery</h1>
+
+    <hr>
+
+    {% for gallery in galleries %}
+        <h2><a href="{% static gallery.get_absolute_url %}">{{ gallery.title }}</a></h2>
+        <p>{{ gallery.description }}</p>
+        <hr>
+    {% endfor %}
+{% endblock %}
+
+{% block photo %}
+    <img src="{% static 'images/Drink_when_I_bid_thee.jpg' %}" alt="Yeah, she's got a pretty smile too." class="bg"/>
+{% endblock %}

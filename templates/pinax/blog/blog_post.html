@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'css/blog_post.css' %}">
+{% endblock %}
+
+{% block content %}
+    <a href="{% url 'pinax_blog:blog' %}"><h1>Blog</h1></a>
+    <div class="blog-nav">
+        <a href="{{ post.older_post.get_absolute_url }}">Previous</a> | <a href="{{ post.newer_post.get_absolute_url }}">Next</a>
+    </div>
+
+    <hr>
+    <h2>{{ post.published|date:"d M Y" }}</h2>
+    <h3 class="content-title">{{ post.title }}</h3>
+
+    {{ post.content_html|safe }}
+
+{% endblock %}
+
+{% block photo %}
+    <img src="{% static 'images/Drink_when_I_bid_thee.jpg' %}" alt="Yeah, she's got a pretty smile too." class="bg"/>
+{% endblock %}

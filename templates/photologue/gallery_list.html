@@ -1,0 +1,17 @@
+{% extends "templates/photologue/gallery_list.html" %}
+
+{% load staticfiles %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'css/gallery/gallery_archive.css' %}"/>
+{% endblock %}
+
+
+{% block content %}
+
+    <ul>
+        {% for gallery in object_list %}
+            <li><a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

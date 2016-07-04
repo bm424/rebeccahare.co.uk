@@ -1,0 +1,29 @@
+{% extends 'photologue/gallery_archive.html' %}
+
+{% load staticfiles %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'css/gallery/gallery_archive.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/gallery/gallery_detail.css' %}"/>
+{% endblock %}
+
+{% block title %}
+Gallery: {{ gallery.title }}
+{% endblock %}
+
+{% block submenu %}
+    <div class="submenu">
+        <a href="{% url 'photologue:pl-gallery-archive' %}"><h3 class="dropdown">&#x25c0 All Galleries</h3></a>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <p>{{ gallery.description }}</p>
+    <hr>
+    {% for photo in gallery.public %}
+        <img src="{{ photo.get_display_url }}" alt="{{ photo.title }}">
+        {{ photo.caption }}
+        <hr>
+    {% endfor %}
+
+{% endblock %}

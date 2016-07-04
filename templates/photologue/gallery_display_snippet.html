@@ -1,0 +1,9 @@
+<div class="gallery-display">
+    <img src="{{ gallery.sample.0.get_display_url }}" , width="100%">
+    <div class="gallery-title-background">
+        <a href="{{ gallery.get_absolute_url }}">
+            <h2>{{ gallery.title }}</h2><p>{{ gallery.date_added|date:"d M Y" }}</p>
+        </a>
+    </div>
+
+</div>

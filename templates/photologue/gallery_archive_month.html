@@ -1,0 +1,34 @@
+{% extends "photologue/gallery_archive.html" %}
+
+{% load staticfiles %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'css/gallery/gallery_archive.css' %}"/>
+{% endblock %}
+
+{% block submenu %}
+{% endblock %}
+
+{% block title %}
+<a href="{% url 'photologue:pl-gallery-archive-year' month.year %}">Galleries {{ month|date:"F Y" }}</a>
+{% endblock %}
+
+{% block content %}
+
+    <div class="gallery-wrapper">
+
+        <div class="row">
+            <div class="gallery-main">
+                {% if object_list %}
+                    {% for gallery in object_list %}
+                        {% include 'photologue/gallery_display_snippet.html' %}
+                    {% endfor %}
+                {% else %}
+                    <p>No galleries were found.</p>
+                {% endif %}
+
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

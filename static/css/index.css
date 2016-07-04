@@ -1,0 +1,38 @@
+div.photo {
+    height: 100%;
+    width: auto;
+    z-index: -4;
+    left: 0;
+    right: auto;
+    background-color: black;
+}
+
+img.bg {
+    min-width: unset;
+    min-height: unset;
+    width: auto;
+    height: 100%;
+}
+
+.title {
+    width: auto;
+}
+
+.title h1 {
+    margin-left: 30px;
+    color: white;
+    font-family: "Tangerine", "Times New Roman", cursive;
+    font-size: 56pt;
+}
+
+.title hr {
+    display: none;
+}
+
+.c-hamburger span {
+    background-color: white;
+}
+
+.c-hamburger span::before, .c-hamburger span::after {
+    background-color: white;
+}

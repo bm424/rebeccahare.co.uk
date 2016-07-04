@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}
+    Rebecca Hare
+{% endblock %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+    <link href='https://fonts.googleapis.com/css?family=Tangerine:700' rel='stylesheet' type='text/css'>
+{% endblock %}
+
+{% block photo %}
+    <img src="{% static 'images/main_headshot_web_widened.jpg' %}" alt="Stunning headshot of Rebecca Hare" class="bg"/>
+{% endblock %}

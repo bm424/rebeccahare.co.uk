@@ -1,0 +1,22 @@
+div.cv {
+    margin-top: none;
+}
+
+.cv div{
+    position: relative;
+    padding: none;
+    z-index: 3;
+}
+
+.theatre li {
+    list-style-type: none;
+}
+
+.supplementary {
+    margin-top: -1.5em;
+    font-size: small;
+}
+
+a.gallery {
+    text-decoration: underline;
+}

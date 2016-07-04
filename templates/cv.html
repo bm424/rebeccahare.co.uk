@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'css/cv.css' %}" />
+{% endblock %}
+
+{% block script %}
+    <script src={% static 'java/cv.js' %}></script>
+{% endblock %}
+
+{% block submenu %}
+    <div class="submenu">
+        <h3 class="dropdown">Bio &#x25bc</h3>
+        <ul class="dropdown-content">
+            <li class="bio"><h3><a>Bio</a></h3></li>
+            <li class="education"><h3><a>Training</a></h3></li>
+            <li class="theatre"><h3><a>Theatre Credits</a></h3></li>
+            <li class="skills"><h3><a>Skills</a></h3></li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block title %}
+Curriculum Vitae
+{% endblock %}
+
+{% block content %}
+
+    {% regroup theatre_credits by final.year as credit_lists %}
+    <div class="cv">
+        <div class="theatre">
+            <ul>
+                {% for year in credit_lists %}
+                <li>
+                    <h3>{{ year.grouper }}</h3>
+                    <ul>
+                        {% for credit in year.list %}
+                            <li><p>{{ credit.role }}, <i>{{ credit.performance }}</i>
+                                {% if credit.gallery %}
+                                    <a href="{{ credit.gallery.get_absolute_url }}" class="gallery">(Gallery)</a>
+                                {% endif %}</p>
+                            <p class="supplementary">
+                                {% if credit.venue %}
+                                    {{ credit.venue }},
+                                {% endif %}
+                                {% if credit.director %}
+                                     dir. {{ credit.director }}
+                                {% endif %}
+                            </p>
+
+                            </li>
+                        {% endfor %}
+
+                    </ul>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="education">
+            <ul>
+                {% for school in education %}
+                    <li><h3>{{ school.start_year }}-{{ school.end_year }}:</h3>{{ school.institution }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="skills">
+            <ul>
+                <ul>
+                    {% for skill in skill_category.list %}
+                        <li><h3>{{ skill.name }}</h3><p>{{ skill.detail }}</p></li>
+                    {% endfor %}
+                </ul>
+            </ul>
+        </div>
+        <div class="bio">
+            <p>Full name: {{ about.full_name }}</p>
+            <p>Height: {{ about.height_feet }} ({{ about.height_meters }}m)</p>
+            <p>Hair colour: {{ about.get_hair_colour_display }}</p>
+            <p>Eye colour: {{ about.get_eye_colour_display }}</p>
+            <p>Playing range: {{ about.playing_age_min }}-{{ about.playing_age_max }}</p>
+            <p>Current Location: {{ about.location }}</p>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block photo %}
+    <img src="{% static 'images/main_headshot_2_web.jpg' %}" alt="Yeah, she's got a pretty smile too." class="bg"/>
+{% endblock %}
