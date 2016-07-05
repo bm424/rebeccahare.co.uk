@@ -41,12 +41,12 @@
             <button class="c-hamburger c-hamburger-x">
                 <span>toggle menu</span>
             </button>
+            {% block submenu %}
+            {% endblock %}
             <h1>
                 {% block title %}
                 {% endblock %}
             </h1>
-            {% block submenu %}
-            {% endblock %}
             <hr>
         </div>
         {% block content %}
