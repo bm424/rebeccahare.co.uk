@@ -1,4 +1,7 @@
 @media (orientation: portrait) {
+    .content {
+        margin-right: 25px;
+    }
     div.photo {
         display: inline;
     }
@@ -39,9 +42,9 @@ img.bg {
     font-size: 56pt;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
     .title h1 {
-        font-size: 48pt;
+        font-size: 36pt;
     }
 }
 
