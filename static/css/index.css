@@ -28,6 +28,7 @@ img.bg {
 
 .title {
     width: auto;
+    text-align: left;
 }
 
 .title h1 {
@@ -36,6 +37,12 @@ img.bg {
     color: white;
     font-family: "Tangerine", "Times New Roman", cursive;
     font-size: 56pt;
+}
+
+@media (max-width: 700px) {
+    .title h1 {
+        font-size: 48pt;
+    }
 }
 
 .title hr {
@@ -48,4 +55,17 @@ img.bg {
 
 .c-hamburger span::before, .c-hamburger span::after {
     background-color: white;
+}
+
+.c-hamburger:hover > span, .c-hamburger:hover > span::before, .c-hamburger:hover > span::after {
+    background-color: white;
+}
+
+.c-hamburger-x span {
+    transition: background-color 0s 0.25s;
+}
+
+.c-hamburger-x.is-active span {
+    background-color: transparent;
+    transition: background-color 0s 0.25s;
 }
