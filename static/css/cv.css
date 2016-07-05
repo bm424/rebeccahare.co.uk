@@ -8,6 +8,10 @@ div.cv {
     z-index: 3;
 }
 
+.theatre ul {
+    padding-left: 0;
+}
+
 .theatre li {
     list-style-type: none;
 }
