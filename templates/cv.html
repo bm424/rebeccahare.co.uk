@@ -67,11 +67,9 @@ Curriculum Vitae
         </div>
         <div class="skills">
             <ul>
-                <ul>
-                    {% for skill in skill_category.list %}
-                        <li><h3>{{ skill.name }}</h3><p>{{ skill.detail }}</p></li>
-                    {% endfor %}
-                </ul>
+                {% for skill in skills %}
+                    <li><h3>{{ skill.name }}</h3><p>{{ skill.detail }}</p></li>
+                {% endfor %}
             </ul>
         </div>
         <div class="bio">

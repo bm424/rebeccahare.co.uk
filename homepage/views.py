@@ -15,7 +15,7 @@ def about(request):
 def cv(request):
     theatre_credits = TheatreCredit.objects.order_by('-final')
     education = Education.objects.order_by('end_date')
-    skills = Skill.objects.order_by('category')
+    skills = Skill.objects.all()
     about = Actor.objects.first()
     context = {
         'theatre_credits': theatre_credits,
