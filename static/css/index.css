@@ -32,6 +32,7 @@ img.bg {
 .title {
     width: auto;
     text-align: left;
+    float: left;
 }
 
 .title h1 {
