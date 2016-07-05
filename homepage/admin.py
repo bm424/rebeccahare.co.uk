@@ -18,9 +18,9 @@ class ActorForm(forms.ModelForm):
         return self.cleaned_data
 
 
-class ContactDetailForm(forms.ModelForm):
+class ContactDetailsForm(forms.ModelForm):
     class Meta:
-        model = ContactDetail
+        model = ContactDetails
         fields = "__all__"
 
 
@@ -32,8 +32,8 @@ class ActorAdmin(admin.ModelAdmin):
         return allow_up_to(self.model, 1)
 
 
-class ContactDetailAdmin(admin.ModelAdmin):
-    form = ContactDetailForm
+class ContactDetailsAdmin(admin.ModelAdmin):
+    form = ContactDetailsForm
 
     def has_add_permission(self, request):
         return allow_up_to(self.model, 1)
@@ -68,4 +68,4 @@ admin.site.register(Actor, ActorAdmin)
 admin.site.register(TheatreCredit)
 admin.site.register(Education)
 admin.site.register(Skill)
-admin.site.register(ContactDetail)
+admin.site.register(ContactDetails, ContactDetailsAdmin)

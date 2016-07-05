@@ -1,11 +1,11 @@
 from django import template
 
-from homepage.models import ContactDetail
+from homepage.models import ContactDetails
 
 register = template.Library()
 
 
 @register.inclusion_tag('contact.html')
 def contact_details():
-    contact = ContactDetail.objects.first()
+    contact = ContactDetails.objects.first()
     return {'contact': contact}

@@ -77,6 +77,8 @@ class Skill(models.Model):
 
 
 class Education(models.Model):
+    class Meta:
+        verbose_name_plural = "education"
     institution = models.CharField(max_length=64, help_text="E.g. University of Bristol")
     start_date = models.DateField(blank=True)
     end_date = models.DateField()
@@ -92,14 +94,21 @@ class Education(models.Model):
         return "{}, {}-{}".format(self.institution, self.start_date.year, self.end_date.year)
 
 
-class ContactDetail(models.Model):
-    type = models.CharField(max_length=32, help_text="E.g. 'Professional' or 'Personal'")
-    email = models.EmailField(max_length=128, help_text="E.g. patrickstewart@gmail.com", blank=True)
+class ContactDetails(models.Model):
+    class Meta:
+        verbose_name_plural = "contact details"
+
+    email = models.EmailField(max_length=128, help_text="E.g. sherlock_holmes@gmail.com", blank=True)
     phone = models.CharField(max_length=18, help_text="E.g. '07987 654 321' or '0041 234 56 78 90'", blank=True)
     address_line_1 = models.CharField(max_length=64, help_text="E.g. 221b Baker Street", blank=True)
-    address_line_2 = models.CharField(max_length=64, help_text="E.g. Muswell Hill", blank=True)
-    city = models.CharField(max_length=32, help_text="E.g. London")
+    address_line_2 = models.CharField(max_length=64, blank=True)
+    city = models.CharField(max_length=32, help_text="E.g. London", blank=True)
     postcode = models.CharField(max_length=8, help_text="E.g. CL12 321", blank=True)
+    spotlight = models.URLField(help_text="Link to your Spotlight profile", blank=True)
 
     def __str__(self):
-        return "{}: {}".format(self.type, self.email)
+        s = "Contact details"
+        if len(self.email) > 0:
+            s += ": {}".format(self.email)
+        return s
+
