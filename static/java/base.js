@@ -14,14 +14,14 @@ var main = function() {
             $(this).animate(out, 500);
             $('header').animate(out, 500);
             $('main').animate(out, 500);
-            $('div.photo').animate({right: '+='.concat(menuwidth, 'px')}, 500);
+            $('div.photo').animate({left: '-='.concat(menuwidth, 'px')}, 500);
 
         } else {
             $(this).addClass('is-active');
             $(this).animate(back, 500);
             $('header').animate(back, 500);
             $('main').animate(back, 500);
-            $('div.photo').animate({right: '-='.concat(menuwidth, 'px')}, 500);
+            $('div.photo').animate({left: '+='.concat(menuwidth, 'px')}, 500);
             }
         });
     };
