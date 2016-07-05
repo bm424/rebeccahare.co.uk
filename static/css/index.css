@@ -19,7 +19,8 @@ img.bg {
 }
 
 .title h1 {
-    margin-left: 30px;
+    margin-left: 0;
+    text-align: left;
     color: white;
     font-family: "Tangerine", "Times New Roman", cursive;
     font-size: 56pt;
