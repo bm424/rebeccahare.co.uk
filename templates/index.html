@@ -12,5 +12,12 @@
 {% endblock %}
 
 {% block photo %}
-    <img src="{% static 'images/main_headshot_web_widened.jpg' %}" alt="Stunning headshot of Rebecca Hare" class="bg"/>
+    <picture>
+        <source srcset="{% static 'images/main_headshot_web_widened.jpg' %}" media="(orientation: landscape)">
+        <source srcset="{% static 'images/main_headshot_2_web.jpg' %}" media="(orientation: portrait)">
+        <img src="{% static 'images/main_headshot_4_web.jpg' %}"
+             alt="Stunning headshot of Rebecca Hare"
+             class="bg"/>
+    </picture>
+
 {% endblock %}
