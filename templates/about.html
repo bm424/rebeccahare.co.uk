@@ -11,7 +11,7 @@ About
 {% endblock %}
 
 {% block content %}
-    {{ about.about|safe }}
+    {{ about.about | safe | linebreaks }}
 {% endblock %}
 
 {% block photo %}
