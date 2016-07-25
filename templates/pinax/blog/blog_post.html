@@ -12,11 +12,14 @@ Blog
 {% endblock %}
 
 {% block content %}
+
+    <h2>{{ post.published|date:"d M Y" }}</h2>
+
     <div class="blog-nav">
         <a href="{{ post.older_post.get_absolute_url }}">Previous</a> | <a href="{{ post.newer_post.get_absolute_url }}">Next</a>
     </div>
 
-    <h2>{{ post.published|date:"d M Y" }}</h2>
+
     <h3 class="content-title">{{ post.title }}</h3>
 
     {{ post.content_html|safe }}
