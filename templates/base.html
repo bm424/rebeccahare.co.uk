@@ -59,7 +59,10 @@
         {% block photo %}
         {% endblock %}
     </div>
-    <script src="{% static 'java/base.js' %}"></script>
+
+    {% block basescript %}
+        <script src="{% static 'java/base.js' %}"></script>
+    {% endblock %}
 
 </body>
 </html>

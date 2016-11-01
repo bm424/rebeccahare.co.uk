@@ -2,10 +2,6 @@
 
 {% load staticfiles %}
 
-{% block title %}
-    Rebecca Hare
-{% endblock %}
-
 {% block stylesheet %}
     <link rel="stylesheet" href="{% static 'css/index.css' %}" />
     <link href='https://fonts.googleapis.com/css?family=Tangerine:700' rel='stylesheet' type='text/css'>
@@ -19,5 +15,8 @@
              alt="Stunning headshot of Rebecca Hare"
              class="bg"/>
     </picture>
+{% endblock %}
 
+{% block basescript %}
+    <script src="{% static 'java/index.js' %}"></script>
 {% endblock %}
