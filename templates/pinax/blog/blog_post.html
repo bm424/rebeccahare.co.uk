@@ -7,14 +7,19 @@
     <link rel="stylesheet" href="{% static 'css/blog_post.css' %}">
 {% endblock %}
 
+{% block title %}
+Blog
+{% endblock %}
+
 {% block content %}
-    <a href="{% url 'pinax_blog:blog' %}"><h1>Blog</h1></a>
+
+    <h2>{{ post.published|date:"d M Y" }}</h2>
+
     <div class="blog-nav">
         <a href="{{ post.older_post.get_absolute_url }}">Previous</a> | <a href="{{ post.newer_post.get_absolute_url }}">Next</a>
     </div>
 
-    <hr>
-    <h2>{{ post.published|date:"d M Y" }}</h2>
+
     <h3 class="content-title">{{ post.title }}</h3>
 
     {{ post.content_html|safe }}
