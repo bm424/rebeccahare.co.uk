@@ -235,11 +235,12 @@ img.bg {
 }
 
 .c-hamburger {
+
     position: fixed;
     overflow: hidden;
     padding: 0;
     width: 50px;
-    height: 50px;
+    height: 55px;
     font-size: 0;
     text-indent: -9999px;
     background: transparent;
@@ -247,6 +248,8 @@ img.bg {
     top: 12px;
     left: 12px;
     cursor: pointer;
+    border: solid 1.5pt darkslategrey;
+    border-radius: 4pt;
 }
 
 .c-hamburger:hover > span, .c-hamburger:hover > span::before, .c-hamburger:hover > span::after {
@@ -318,8 +321,3 @@ img.bg {
 .c-hamburger-x.is-active span::after {
     transition-delay: 0s, 0.3s;
 }
-
-
-
-
-

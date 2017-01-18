@@ -51,6 +51,10 @@ img.bg {
     display: none;
 }
 
+.c-hamburger {
+  border: solid 1.5pt white;
+}
+
 .c-hamburger span {
     background-color: white;
 }
