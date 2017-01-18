@@ -25,6 +25,13 @@ def cv(request):
     }
     return render(request, 'cv.html', context)
 
+def showreel(request):
+    showreels = Showreel.objects.all()
+    context = {
+        'showreels': showreels
+    }
+    return render(request, 'showreel.html', context)
+
 
 # def gallery_list(request):
 #     gallery = Gallery.objects.all()
@@ -34,4 +41,3 @@ def cv(request):
 def gallery_detail(request, slug):
     gallery = Gallery.objects.get(slug=slug)
     return render(request, 'gallery_detail.html', {'gallery': gallery})
-

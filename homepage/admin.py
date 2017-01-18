@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib import admin
+from embed_video.admin import AdminVideoMixin
 from homepage.models import *
 
 
@@ -64,8 +65,12 @@ def allow_up_to(model, num):
     else:
         return True
 
+class ShowreelAdmin(AdminVideoMixin, admin.ModelAdmin):
+    pass
+
 admin.site.register(Actor, ActorAdmin)
 admin.site.register(TheatreCredit)
 admin.site.register(Education)
 admin.site.register(Skill)
 admin.site.register(ContactDetails, ContactDetailsAdmin)
+admin.site.register(Showreel, ShowreelAdmin)

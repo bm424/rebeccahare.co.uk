@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+{% load embed_video_tags %}
+
+{% block title %}
+Showreel
+{% endblock %}
+
+{% block content %}
+
+    {% for showreel in showreels %}
+        <h2>{{ showreel.title }}</h2>
+        {% if showreel.description %}
+          {{ showreel.description | safe | linebreaks }}
+        {% endif %}
+        {% video showreel.video '100% x 360' %}
+        {% if not forloop.last %}
+          <hr />
+        {% endif %}
+    {% endfor %}
+{% endblock %}
+
+{% block photo %}
+    <img src="{% static 'images/Drink_when_I_bid_thee.jpg' %}" alt="Yeah, she's got a pretty smile too." class="bg"/>
+{% endblock %}

@@ -1,6 +1,7 @@
 from django.db import models
 from django.core import validators
 from photologue.models import Gallery
+from embed_video.fields import EmbedVideoField
 
 
 class Actor(models.Model):
@@ -112,3 +113,7 @@ class ContactDetails(models.Model):
             s += ": {}".format(self.email)
         return s
 
+class Showreel(models.Model):
+    title = models.CharField(max_length=64)
+    description = models.TextField(blank=True)
+    video = EmbedVideoField()
