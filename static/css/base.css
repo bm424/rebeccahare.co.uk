@@ -15,7 +15,7 @@ footer {
 
 header {
     top: 0;
-    text-align: right;
+    text-align: center;
     position: fixed;
     background-color: #6d7993;
     z-index: 100;
