@@ -96,6 +96,10 @@ header li:first-of-type {
 header li:last-of-type {
 }
 
+.twitter-feed {
+    margin-top: 1em;
+}
+
 .contact {
     position: absolute;
     bottom: 0;
@@ -128,6 +132,12 @@ main {
 @media (orientation: portrait) {
     main {
         width: 100%;
+    }
+    header h1 {
+	font-size: 1.5em;
+    }
+    header ul h2 {
+	font-size: 1em;
     }
 }
 

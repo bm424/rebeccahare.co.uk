@@ -4,7 +4,7 @@
 
 var main = function() {
     var menu = $('header');
-    var menuwidth = menu.outerWidth().toString();
+    var menuwidth = "240";
     var out = {left: '-='.concat(menuwidth, 'px')};
     var back = {left: '+='.concat(menuwidth, 'px')};
     menu.css(out);

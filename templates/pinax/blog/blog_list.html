@@ -9,7 +9,7 @@ Blog
 {% block content %}
 
     {% for post in post_list %}
-        <a href="{{ post.get_absolute_url }}"><h3>{{ post.created.date|date:"d M Y" }}: {{ post.title }}</h3></a>
+        <a href="{{ post.get_absolute_url }}"><h3>{{ post.published|date:"d M Y" }}: {{ post.title }}</h3></a>
         {{ post.teaser_html|safe }}
         <hr>
     {% endfor %}
